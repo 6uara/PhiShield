@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button bronzeButton;
     [SerializeField] private Button silverButton;
     [SerializeField] private Button goldButton;
+    
+    [FormerlySerializedAs("BronzeImage")]
+    [Header("Difficulty Seals")]
+    [SerializeField] private Image bronzeImage;
+    [SerializeField] private Image silverImage;
+    [SerializeField] private Image goldImage;
     
     [Header("Scene Names")]
     [SerializeField] private string bronzeLevelScene = "BronzeLevelScene";
@@ -61,13 +68,8 @@ public class MainMenuManager : MonoBehaviour
         UpdateDifficultyButtonsState();
     }
     
-    private void Start()
-    {
-        // Show main panel by default
-        ShowMainPanel();
-    }
+    private void Start() { ShowMainPanel(); }
     
-    // Panel navigation methods
     public void ShowMainPanel()
     {
         mainPanel.SetActive(true);
@@ -173,8 +175,9 @@ public class MainMenuManager : MonoBehaviour
     
     private void UpdateProfileDisplay()
     {
-        // Update profile display with medals and progress
-        // (This would reference actual UI elements in the profile panel)
+        if(_playerProgress.hasBronzeMedal){ bronzeImage.gameObject.SetActive(true);}else { bronzeImage.gameObject.SetActive(false);}
+        if(_playerProgress.hasSilverMedal){ silverImage.gameObject.SetActive(true);}else { silverImage.gameObject.SetActive(false);}
+        if(_playerProgress.hasGoldMedal){ goldImage.gameObject.SetActive(true);}else { goldImage.gameObject.SetActive(false);}
     }
     
     // Audio methods
