@@ -1,17 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Interfaz para acceder a las plantillas
-public interface ITemplateRepository
-{
-    List<string> GetPhishingSenderTemplates(EmailTheme theme);
-    List<string> GetLegitimateSenderTemplates(EmailTheme theme);
-    List<string> GetPhishingSubjectTemplates(EmailTheme theme);
-    List<string> GetLegitimateSubjectTemplates(EmailTheme theme);
-    List<string> GetPhishingBodyTemplates(EmailTheme theme);
-    List<string> GetLegitimateBodyTemplates(EmailTheme theme);
-    List<string> GetPhishingIndicatorTemplates(EmailTheme theme);
-}
+
 // Implementación usando ScriptableObjects
 public class ScriptableObjectTemplateRepository : MonoBehaviour, ITemplateRepository
 {
@@ -92,18 +82,4 @@ public class ScriptableObjectTemplateRepository : MonoBehaviour, ITemplateReposi
 
 }
 
-// ScriptableObject para almacenar plantillas
-[CreateAssetMenu(fileName = "EmailTemplates", menuName = "PhiShield/Email Templates")]
-public class EmailTemplateScriptableObject : ScriptableObject
-{
-    public EmailTheme Theme;
 
-    public List<string> PhishingSenderTemplates;
-    public List<string> LegitimateSenderTemplates;
-    public List<string> PhishingSubjectTemplates;
-    public List<string> LegitimateSubjectTemplates;
-    public List<string> PhishingBodyTemplates;
-    public List<string> LegitimateBodyTemplates;
-    public List<string> PhishingIndicatorTemplates;
-
-}

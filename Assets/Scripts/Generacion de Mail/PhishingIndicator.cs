@@ -1,24 +1,6 @@
 using System;
 using UnityEngine;
 
-public interface IPhishingIndicator
-{
-    string Description { get; }
-    PhishingIndicatorType Type { get; }
-    int SeverityLevel { get; }
-}
-
-public enum PhishingIndicatorType
-{
-    SuspiciousSender,
-    MaliciousLink,
-    SpellingError,
-    UrgencyTactic,
-    SpoofedDomain,
-    DataRequest,
-    UnusualAttachment
-}
-
 // Implementación concreta de indicador
 public class PhishingIndicator : IPhishingIndicator
 {
