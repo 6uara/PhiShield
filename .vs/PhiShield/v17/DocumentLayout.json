@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\PhiShield\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|c:\\git\\phishield\\assets\\scripts\\generacionmail\\new folder\\clickablemailui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\generacionmail\\new folder\\clickablemailui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|C:\\Git\\PhiShield\\assets\\scripts\\generacionmail\\new folder\\emailanalysismanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\generacionmail\\new folder\\emailanalysismanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|C:\\Git\\PhiShield\\assets\\scripts\\generacionmail\\new folder\\emaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\generacionmail\\new folder\\emaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|C:\\Git\\PhiShield\\assets\\scripts\\generacionmail\\emailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4513F129-4251-F836-47FA-5D244A9495CC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\generacionmail\\emailmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmailManager.cs",
+              "DocumentMoniker": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\EmailManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GeneracionMail\\EmailManager.cs",
+              "ToolTip": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\EmailManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GeneracionMail\\EmailManager.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T23:59:40.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailAnalysisManager.cs",
+              "DocumentMoniker": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\EmailAnalysisManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GeneracionMail\\New Folder\\EmailAnalysisManager.cs",
+              "ToolTip": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\EmailAnalysisManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GeneracionMail\\New Folder\\EmailAnalysisManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T23:53:15.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmailData.cs",
+              "DocumentMoniker": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\EmailData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GeneracionMail\\New Folder\\EmailData.cs",
+              "ToolTip": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\EmailData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GeneracionMail\\New Folder\\EmailData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T23:50:36.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClickableMailUI.cs",
+              "DocumentMoniker": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\ClickableMailUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GeneracionMail\\New Folder\\ClickableMailUI.cs",
+              "ToolTip": "C:\\Git\\PhiShield\\Assets\\Scripts\\GeneracionMail\\New Folder\\ClickableMailUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GeneracionMail\\New Folder\\ClickableMailUI.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAjwCoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T23:48:43.459Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
