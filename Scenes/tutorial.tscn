@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnwj6iinh1x4"]
+
+[ext_resource type="Script" uid="uid://b3uvstvwpaivd" path="res://Script/tutorial.gd" id="1_ka2pi"]
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="3_omtrn"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ka2pi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156
+anchor_top = 0.5
+anchor_right = 0.891
+anchor_bottom = 0.5
+offset_left = 0.287994
+offset_right = -0.432007
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_omtrn")
+fit_content = true
+
+[node name="GetTextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 80.0
+grow_vertical = 0
+theme = ExtResource("3_omtrn")
+text = "Siguiente"
+
+[connection signal="pressed" from="GetTextButton" to="." method="getText"]

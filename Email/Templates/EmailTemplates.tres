@@ -1,0 +1,110 @@
+[gd_resource type="Resource" script_class="EmailTemplates" load_steps=9 format=3 uid="uid://ccjsepuhoksbk"]
+
+[ext_resource type="Script" uid="uid://ybdvfgy72k5q" path="res://Email/EmailData.gd" id="1_efps2"]
+[ext_resource type="Script" uid="uid://cjj0662xr4bty" path="res://Email/Templates/emailTemplates.gd" id="2_j5dfe"]
+
+[sub_resource type="Resource" id="Resource_efps2"]
+script = ExtResource("1_efps2")
+remitente_visible = "Soporte Empresa"
+remitente_real = "mailsoporte@gmail.com"
+asunto = "URGENTE: Su cuenta será suspendida en 24 horas"
+cuerpo = "Estimado usuario,
+Hemos detectado actividad sospechosa en su cuenta. Por seguridad, debe verificar su identidad INMEDIATAMENTE o su cuenta será bloqueada permanentemente.
+Haga clic aquí para verificar: [url={\"key\": \"value\"}]Text[/url]
+Tiene solo 24 horas para completar este proceso.
+Gracias, Equipo de Seguridad"
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String](["company_security_info.pdf"])
+es_phishing = true
+pistas = Array[String](["Mail No Confiable"])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[sub_resource type="Resource" id="Resource_sjj86"]
+script = ExtResource("1_efps2")
+remitente_visible = "RRHH Microsoft"
+remitente_real = "microsoftsupp@gmail.com"
+asunto = "¡Felicitaciones! Aumento salarial aprobado - Confirme sus datos"
+cuerpo = "Estimado/a empleado/a,
+Nos complace informarle que ha sido seleccionado/a para un aumento salarial del 35% efectivo inmediatamente.
+Para procesar este aumento, necesitamos verificar sus datos bancarios actualizados:
+🔗 Confirme aquí sus datos: [url={\"key\": \"value\"}]Text[/url]
+Debe completar este formulario antes de las 18:00 hrs o perderá esta oportunidad.
+Adjunte también copia de su cédula y últimas 3 liquidaciones.
+Saludos, Departamento RRHH"
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String](["contrato.pdf.exe"])
+es_phishing = true
+pistas = Array[String](["Adjunto No Confiable", "Link Sospechoso"])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[sub_resource type="Resource" id="Resource_6laee"]
+script = ExtResource("1_efps2")
+remitente_visible = "PYME Generica"
+remitente_real = "mailtrucho@mctrucho.com"
+asunto = "¡Oferta de trabajo exclusiva! Gerente Senior - $2.500.000 líquidos"
+cuerpo = "Estimado/a profesional,
+Hemos revisado su perfil y creemos que es el candidato PERFECTO para nuestra vacante de Gerente Senior en empresa multinacional.
+Beneficios: ✅ Sueldo: $2.500.000 líquidos ✅ Trabajo remoto 100% ✅ Solo 4 horas diarias ✅ Inicio inmediato
+¡ÚLTIMA OPORTUNIDAD! Solo quedan 2 cupos.
+Para asegurar su puesto, complete urgentemente: 🔗 Formulario de contratación: [url={\"key\": \"value\"}]Text[/url]
+Necesitamos:
+Datos bancarios para depósito de anticipo
+Copia de cédula y certificados
+Pago de $50.000 por trámites administrativos
+Respuesta antes de medianoche o perderá esta oportunidad única.
+Saludos, Reclutamiento Premium"
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String](["perfilpuesto.pdf"])
+es_phishing = true
+pistas = Array[String](["Link Sospechoso", "Sender Sospechoso"])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[sub_resource type="Resource" id="Resource_ts1la"]
+script = ExtResource("1_efps2")
+remitente_visible = "Soporte Tecnico Globant"
+remitente_real = "globant_support@gmail.com"
+asunto = "ACCIÓN REQUERIDA: Actualice su contraseña HOY"
+cuerpo = "Estimado usuario,
+Por políticas de seguridad corporativa, DEBE actualizar su contraseña antes de las 23:59 de hoy o su cuenta será deshabilitada automáticamente.
+Su contraseña actual expira en: 3 horas 45 minutos
+🔒 Actualizar contraseña ahora: [url={\"key\": \"value\"}]Text[/url]
+Si no actualiza hoy: ❌ Perderá acceso a todos los sistemas ❌ No podrá recuperar sus archivos ❌ Deberá solicitar reactivación presencial
+Este proceso toma solo 2 minutos.
+¡No espere más!
+Departamento de TI Soporte Técnico"
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String](["company_security_guidelines.pdf"])
+es_phishing = false
+pistas = Array[String](["Link Sospechoso", "Archivo Sospechoso"])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[sub_resource type="Resource" id="Resource_j5dfe"]
+script = ExtResource("1_efps2")
+remitente_visible = ""
+remitente_real = ""
+asunto = ""
+cuerpo = ""
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String]([])
+es_phishing = false
+pistas = Array[String]([])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[sub_resource type="Resource" id="Resource_rv4n1"]
+script = ExtResource("1_efps2")
+remitente_visible = ""
+remitente_real = ""
+asunto = ""
+cuerpo = ""
+enlaces = Array[Dictionary]([])
+adjuntos = Array[String]([])
+es_phishing = false
+pistas = Array[String]([])
+metadata/_custom_type_script = "uid://ybdvfgy72k5q"
+
+[resource]
+script = ExtResource("2_j5dfe")
+BronceTemplates = Array[ExtResource("1_efps2")]([SubResource("Resource_efps2"), SubResource("Resource_sjj86"), SubResource("Resource_6laee"), SubResource("Resource_ts1la")])
+PlataTemplates = Array[ExtResource("1_efps2")]([SubResource("Resource_rv4n1")])
+OroTemplates = Array[ExtResource("1_efps2")]([SubResource("Resource_j5dfe")])
+metadata/_custom_type_script = "uid://cjj0662xr4bty"

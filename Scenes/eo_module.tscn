@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkwlh2yg028ga"]
+
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="1_5qi0s"]
+[ext_resource type="Script" uid="uid://duinbd463cuit" path="res://Scenes/eo_module.gd" id="3_dltu0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qi0s"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="EoModule" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.091
+anchor_top = 0.1
+anchor_right = 0.911
+anchor_bottom = 0.883
+offset_left = 0.167992
+offset_top = 0.199997
+offset_right = 0.527954
+offset_bottom = -0.184021
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_5qi0s")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qi0s")
+script = ExtResource("3_dltu0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextoEoModulo" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Volver al Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volver al Menu"
+
+[node name="Siguiente" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Siguiente Modulo"
+
+[node name="Reintentar" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reintentar Modulo"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Volver al Menu" to="." method="volveralmenu"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Siguiente" to="." method="siguientemodulo"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Reintentar" to="." method="reintentarmodulo"]

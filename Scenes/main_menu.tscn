@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgt4lpvarkwvp"]
+
+[ext_resource type="Script" uid="uid://bisdh0sv3iiha" path="res://Script/main_menu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://7nyt06yrvxoe" path="res://Scenes/options_menu.tscn" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://dnoas5254q5oj" path="res://Script/FotoPerfil.gd" id="3_1ehe0"]
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="4_ce3w2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="OptionsMenu" parent="." instance=ExtResource("2_48xlc")]
+visible = false
+layout_mode = 1
+offset_left = -89.0
+offset_top = -4.0
+offset_right = -89.0
+offset_bottom = -4.0
+
+[node name="OptionsQuit" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -66.0
+offset_right = 236.0
+grow_vertical = 0
+
+[node name="OptionsButton" type="Button" parent="OptionsQuit"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="OptionsQuit"]
+layout_mode = 2
+text = "Quit"
+
+[node name="PlayContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 195.0
+offset_bottom = 66.0
+
+[node name="PlayButton" type="Button" parent="PlayContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="SelectDificulty" type="OptionButton" parent="PlayContainer"]
+visible = false
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Bronce"
+popup/item_0/id = 0
+popup/item_1/text = "Plata"
+popup/item_1/id = 1
+popup/item_2/text = "Oro"
+popup/item_2/id = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 360.0
+one_shot = true
+
+[node name="FotoPerfil" type="PanelContainer" parent="." node_paths=PackedStringArray("profile_pic", "change_button", "file_dialog")]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_bottom = 74.0
+grow_horizontal = 0
+script = ExtResource("3_1ehe0")
+profile_pic = NodePath("VBoxContainer/TextureRect")
+change_button = NodePath("VBoxContainer/Button")
+file_dialog = NodePath("FileDialog")
+
+[node name="FileDialog" type="FileDialog" parent="FotoPerfil"]
+access = 2
+filters = PackedStringArray("*.png", "*.jpg , *.jpeg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FotoPerfil"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FotoPerfil/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="FotoPerfil/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("4_ce3w2")
+theme_override_font_sizes/font_size = 14
+text = "Cambiar Foto"
+
+[connection signal="pressed" from="OptionsQuit/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="OptionsQuit/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PlayContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="item_selected" from="PlayContainer/SelectDificulty" to="." method="_on_select_dificulty_item_selected"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=3 uid="uid://7nyt06yrvxoe"]
+
+[ext_resource type="Script" uid="uid://detwkow5vccvj" path="res://Script/options_menu.gd" id="1_plplt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plplt"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="OptionsMenu" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -176.0
+offset_right = 96.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_plplt")
+script = ExtResource("1_plplt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Audio" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Configuracion de Audio"
+
+[node name="AudioContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/AudioContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer/AudioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.01
+value = 0.501
+
+[node name="MusicContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MusicContainer"]
+layout_mode = 2
+text = "Musica"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/MusicContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/SFXContainer"]
+layout_mode = 2
+text = "Efectos"
+
+[node name="SfxSlider" type="HSlider" parent="VBoxContainer/SFXContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Video" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Configuracion de Video"
+
+[node name="VideoContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Resolucion" type="Label" parent="VBoxContainer/VideoContainer"]
+layout_mode = 2
+text = "Resolucion"
+
+[node name="ResolutionButton" type="OptionButton" parent="VBoxContainer/VideoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FullscreenToggle" type="CheckBox" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pantalla Completa"
+
+[node name="VSyncToggle" type="CheckBox" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Vsync"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Atras"

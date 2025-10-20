@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://mahkmmbxbkuc"]
+
+[ext_resource type="Texture2D" uid="uid://bpy4mqmqn35yv" path="res://Assets/Fondo.png" id="1_866uk"]
+[ext_resource type="PackedScene" uid="uid://cnap8k3ngr8yv" path="res://Scenes/escritorio.tscn" id="2_pw11p"]
+[ext_resource type="PackedScene" uid="uid://bnwj6iinh1x4" path="res://Scenes/tutorial.tscn" id="3_eu4a3"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="3_xcom3"]
+[ext_resource type="PackedScene" uid="uid://bsk4djq47krd0" path="res://Scenes/pausa.tscn" id="4_65fw0"]
+[ext_resource type="Script" uid="uid://b1n7pxnh3bwk8" path="res://Script/info_popup.gd" id="4_eu4a3"]
+[ext_resource type="PackedScene" uid="uid://dkwlh2yg028ga" path="res://Scenes/eo_module.tscn" id="5_1sgc7"]
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="5_65fw0"]
+[ext_resource type="FontFile" uid="uid://cg45djd3sgfio" path="res://Font/PixelifySans-Bold.ttf" id="6_1sgc7"]
+[ext_resource type="StyleBox" uid="uid://cfgih13nykl1r" path="res://OnlyBorder.tres" id="7_nmjyb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgkkd"]
+font = ExtResource("6_1sgc7")
+font_size = 12
+
+[node name="Bronce" type="Node2D"]
+
+[node name="PopUpLocation" type="Node2D" parent="."]
+position = Vector2(80, 55)
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.2549, 0.84375)
+texture = ExtResource("1_866uk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Tutorial" parent="CanvasLayer" instance=ExtResource("3_eu4a3")]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.09
+anchor_right = 0.929
+anchor_bottom = 0.855
+offset_left = -0.0319977
+offset_top = -0.320004
+offset_right = -0.208008
+offset_bottom = -0.0400391
+mouse_filter = 2
+
+[node name="Escritorio" parent="CanvasLayer" instance=ExtResource("2_pw11p")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.074
+anchor_right = 0.931
+anchor_bottom = 0.963
+offset_left = 0.575996
+offset_top = 0.0480003
+offset_right = -0.512085
+offset_bottom = -0.0240479
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Pausa" parent="CanvasLayer" instance=ExtResource("4_65fw0")]
+mouse_filter = 2
+
+[node name="EoModule" parent="CanvasLayer" instance=ExtResource("5_1sgc7")]
+visible = false
+
+[node name="Popup" type="PopupPanel" parent="." node_paths=PackedStringArray("popuptr")]
+unique_name_in_owner = true
+auto_translate_mode = 1
+size = Vector2i(250, 200)
+max_size = Vector2i(250, 200)
+theme_override_styles/panel = ExtResource("3_xcom3")
+script = ExtResource("4_eu4a3")
+popuptr = NodePath("../PopUpLocation")
+
+[node name="TextoPopUp" type="Label" parent="Popup"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.996
+offset_right = 250.0
+offset_bottom = 200.0
+theme = ExtResource("5_65fw0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+label_settings = SubResource("LabelSettings_dgkkd")
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="CerrarPopUp" type="Button" parent="Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_65fw0")
+theme_override_styles/normal = ExtResource("7_nmjyb")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="Popup"]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="showpopupinfo" from="CanvasLayer/Escritorio" to="Popup" method="show_info"]
+[connection signal="timeout" from="Popup/Timer" to="Popup" method="_on_timer_timeout"]

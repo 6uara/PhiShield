@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnap8k3ngr8yv"]
+
+[ext_resource type="Script" uid="uid://bhr0ryrmtrcpp" path="res://Script/escritorio.gd" id="1_xx3jy"]
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="2_3j7i0"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="2_ronj5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ronj5"]
+bg_color = Color(0.84624, 0.302478, 0.365218, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5dm"]
+bg_color = Color(0.240945, 0.702163, 0.410564, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Escritorio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xx3jy")
+
+[node name="MailContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278
+anchor_right = 0.999
+anchor_bottom = 0.864
+offset_left = -0.256042
+offset_right = 0.151855
+offset_bottom = -31.872
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_ronj5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MailContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Remitente" type="Label" parent="MailContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+
+[node name="Asunto" type="Label" parent="MailContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+
+[node name="CuerpoMail" type="RichTextLabel" parent="MailContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+bbcode_enabled = true
+fit_content = true
+
+[node name="AdjuntosContainer" type="HBoxContainer" parent="MailContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+
+[node name="ButtonsContainer" type="PanelContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278646
+anchor_top = 0.814815
+anchor_right = 1.0
+anchor_bottom = 0.876543
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_ronj5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Decision" type="HBoxContainer" parent="ButtonsContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="PhishingButton" type="Button" parent="ButtonsContainer/Decision"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ronj5")
+disabled = true
+text = "Es Phishing"
+
+[node name="NoPhishingButton" type="Button" parent="ButtonsContainer/Decision"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hc5dm")
+disabled = true
+text = "No es Phishing"
+
+[node name="SiguienteMail" type="Button" parent="ButtonsContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_3j7i0")
+text = "Siguiente Mail"
+
+[node name="Tools" type="PanelContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.41
+anchor_right = 0.171
+anchor_bottom = 0.58
+offset_left = -0.152
+offset_top = 0.319977
+offset_right = 107.008
+offset_bottom = 0.159973
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_ronj5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tools"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="InspecLink" type="Button" parent="Tools/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+text = "Inspeccionar Link"
+
+[node name="VerificarDominio" type="Button" parent="Tools/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+theme_override_styles/normal = ExtResource("2_ronj5")
+disabled = true
+text = "Verificar Dominio"
+
+[node name="EscanearAdjunto" type="Button" parent="Tools/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+theme_override_styles/normal = ExtResource("2_ronj5")
+disabled = true
+text = "Escanear Adjunto"
+
+[node name="Help" type="Button" parent="Tools/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_3j7i0")
+theme_override_styles/normal = ExtResource("2_ronj5")
+disabled = true
+text = "Guia"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.91
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.67999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_ronj5")
+
+[connection signal="meta_clicked" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="_on_link_inspeccionado"]
+[connection signal="pressed" from="ButtonsContainer/Decision/PhishingButton" to="." method="_on_decision_tomada" binds= [true]]
+[connection signal="pressed" from="ButtonsContainer/Decision/NoPhishingButton" to="." method="_on_decision_tomada" binds= [false]]
+[connection signal="pressed" from="ButtonsContainer/SiguienteMail" to="." method="cargar_siguiente_email"]
+[connection signal="pressed" from="Tools/VBoxContainer/VerificarDominio" to="." method="_on_inspeccionar_remitente"]
+[connection signal="pressed" from="Tools/VBoxContainer/EscanearAdjunto" to="." method="_on_escanear_adjuntos"]
+[connection signal="pressed" from="Tools/VBoxContainer/Help" to="." method="_on_help_asked"]

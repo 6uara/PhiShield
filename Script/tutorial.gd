@@ -1,0 +1,60 @@
+extends Control
+class_name Tutorial
+
+@onready var rich_text_label: RichTextLabel = $RichTextLabel
+
+signal tutorialFinished
+
+var tutotext : Array[String]
+var _index = 0
+var speed = 18
+func _ready() -> void:
+	populate()
+
+func populate():
+	var text = "Asunto: ¡Bienvenido a tu primer día, Analista! 
+	¡Hola! Eres nuestra nueva línea de defensa. 
+	Tu misión es proteger a nuestra organización de la amenaza digital más común y peligrosa: el Phishing. 
+	¿Qué es el Phishing? 
+	En pocas palabras: es una estafa.
+	Los ciberdelincuentes se hacen pasar por alguien de confianza (tu banco, un servicio técnico, una red social o incluso un colega de trabajo) y te envían un correo.
+	Su objetivo es simple: engañarte para que hagas clic en un enlace malicioso o descargues un archivo peligroso. 
+	¿Por qué es tan peligroso? 
+	Para las personas: Un solo clic puede terminar en el robo de tu identidad, la pérdida de dinero de tus cuentas bancarias o el secuestro de tus redes sociales.
+	Para la empresa: Una sola cuenta comprometida puede llevar a una brecha de seguridad masiva, el robo de datos de millones de clientes y pérdidas financieras irreparables.
+	Tu trabajo es que eso no suceda."
+	tutotext.append(text)
+	text = "Tu Misión: Análisis 
+	En esta primera tanda de correos, tu objetivo es simple. 
+	No buscaremos trucos complejos. Nos enfocaremos en las dos mentiras más comunes.
+	La regla de oro es: NUNCA CONFÍES EN LO QUE VES A SIMPLE VISTA.
+	Los atacantes mienten en dos lugares clave:EL REMITENTE (El 'De'):
+		La Máscara: El nombre puede decir 'Soporte Banco Global'.
+		La Realidad: La dirección real puede ser soporte.banco@cuenta-gratis123.xyz.
+	LOS ENLACES (Los 'Links'):
+		La Máscara: El texto del enlace puede decir bancoglobal.com/login.
+		La Realidad: El enlace real puede apuntar a bancogIobal-seguro.com (¡fíjate en la 'i' mayúscula!).
+	Cómo usar tus herramientasPara cada correo que recibas, deberás usar tus herramientas de análisis antes de tomar una decisión:Herramienta 
+	[Verificar Dominio]: Úsala para ver la dirección de correo real del remitente.Herramienta 
+	[Inspeccionar Enlace]: Haz clic en cualquier enlace del correo. Esto no lo abrirá, sino que te mostrará su destino real.
+	El [Manual]: Consulta tu manual. ¿Coincide el dominio real con el dominio oficial de la empresa?Decide: 
+	Si todo es correcto, presiona [Confiar]. Si algo es sospechoso, presiona [Reportar].
+	Estás listo para empezar. Abre tu bandeja de entrada y comencemos.¡Presta atención a los detalles!"
+	tutotext.append(text)
+
+func getText():
+	if(_index < tutotext.size()):
+		var texto = tutotext[_index]
+		rich_text_label.visible_characters = 0
+		rich_text_label.text = texto
+		animateText()
+		_index += 1
+	else:  
+		print("No more Text")
+		tutorialFinished.emit()
+		self.visible = false
+
+
+func animateText():
+	var tween = create_tween()
+	tween.tween_property(rich_text_label, "visible_characters" , rich_text_label.text.length(), rich_text_label.text.length() / speed)
