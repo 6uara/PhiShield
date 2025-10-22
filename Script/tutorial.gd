@@ -14,8 +14,9 @@ func _ready() -> void:
 func populate():
 	var text = "Asunto: ¡Bienvenido a tu primer día, Analista! 
 	¡Hola! Eres nuestra nueva línea de defensa. 
-	Tu misión es proteger a nuestra organización de la amenaza digital más común y peligrosa: el Phishing. 
-	¿Qué es el Phishing? 
+	Tu misión es proteger a nuestra organización de la amenaza digital más común y peligrosa: el Phishing."
+	tutotext.append(text)
+	text = "¿Qué es el Phishing? 
 	En pocas palabras: es una estafa.
 	Los ciberdelincuentes se hacen pasar por alguien de confianza (tu banco, un servicio técnico, una red social o incluso un colega de trabajo) y te envían un correo.
 	Su objetivo es simple: engañarte para que hagas clic en un enlace malicioso o descargues un archivo peligroso. 
@@ -28,13 +29,18 @@ func populate():
 	En esta primera tanda de correos, tu objetivo es simple. 
 	No buscaremos trucos complejos. Nos enfocaremos en las dos mentiras más comunes.
 	La regla de oro es: NUNCA CONFÍES EN LO QUE VES A SIMPLE VISTA.
-	Los atacantes mienten en dos lugares clave:EL REMITENTE (El 'De'):
+	Los atacantes mienten en dos lugares clave:"
+	tutotext.append(text)
+	text = "EL REMITENTE (El 'De'):
 		La Máscara: El nombre puede decir 'Soporte Banco Global'.
-		La Realidad: La dirección real puede ser soporte.banco@cuenta-gratis123.xyz.
-	LOS ENLACES (Los 'Links'):
+		La Realidad: La dirección real puede ser soporte.banco@cuenta-gratis123.xyz."
+	tutotext.append(text)
+	text= "LOS ENLACES (Los 'Links'):
 		La Máscara: El texto del enlace puede decir bancoglobal.com/login.
-		La Realidad: El enlace real puede apuntar a bancogIobal-seguro.com (¡fíjate en la 'i' mayúscula!).
-	Cómo usar tus herramientasPara cada correo que recibas, deberás usar tus herramientas de análisis antes de tomar una decisión:Herramienta 
+		La Realidad: El enlace real puede apuntar a bancogIobal-seguro.com (¡fíjate en la 'i' mayúscula!)."
+	tutotext.append(text)
+	text = "Cómo usar tus herramientas:
+	Para cada correo que recibas, deberás usar tus herramientas de análisis antes de tomar una decisión:Herramienta 
 	[Verificar Dominio]: Úsala para ver la dirección de correo real del remitente.Herramienta 
 	[Inspeccionar Enlace]: Haz clic en cualquier enlace del correo. Esto no lo abrirá, sino que te mostrará su destino real.
 	El [Manual]: Consulta tu manual. ¿Coincide el dominio real con el dominio oficial de la empresa?Decide: 

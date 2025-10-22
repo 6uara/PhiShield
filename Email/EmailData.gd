@@ -4,8 +4,6 @@ extends Resource
 
 ## El email que ve el jugador
 @export var remitente_visible: String
-## El email real (para la trampa)
-@export var remitente_real: String
 @export var asunto: String
 
 ## El cuerpo del email, ¡usando BBCode!

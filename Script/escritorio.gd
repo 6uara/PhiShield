@@ -4,10 +4,12 @@ extends Control
 @export var current_difficulty: difficultyEnums.difficulty = difficultyEnums.difficulty.Bronce
 
 # --- NODOS DE LA INTERFAZ ---
-@onready var remitente_label: Label = %Remitente
+@onready var remitente_label: RichTextLabel = %Remitente
 @onready var asunto_label: Label = %Asunto
 @onready var cuerpo_email: RichTextLabel = %CuerpoMail
 @onready var adjuntos_box: HBoxContainer = %AdjuntosContainer
+@onready var tooltip_container: PanelContainer = $TooltipContainer
+@onready var tooltip: Label = %Tooltip
 
 # --- NODOS DE DECISIÓN ---
 @onready var boton_confiar: Button = %NoPhishingButton
@@ -41,13 +43,12 @@ func _ready() -> void:
 # FUNCIONES PRINCIPALES DEL JUEGO
 # -----------------------------------------------------------------
 func cargar_siguiente_email() -> void:
-	print("LLamo a cargar mail")
 	email_actual = EmailGenerator.get_next_email(current_difficulty)
 
 	remitente_label.text = "De: " + email_actual.remitente_visible
 	asunto_label.text = "Asunto: " + email_actual.asunto
 	cuerpo_email.text = email_actual.cuerpo
-	animateText(remitente_label)
+	animateRichText(remitente_label)
 	animateText(asunto_label)
 	animateRichText(cuerpo_email)
 	
@@ -61,6 +62,7 @@ func cargar_siguiente_email() -> void:
 
 	if(boton_confiar.disabled || boton_reportar.disabled):
 		activarBotones()
+		siguiente_mail.disabled = true
 
 func _on_decision_tomada(decision_del_jugador: bool) -> void:
 	var fue_correcto = (decision_del_jugador == email_actual.es_phishing)
@@ -81,22 +83,23 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 			for pista in email_actual.pistas:
 				feedback += "- " + pista + "\n"
 		showpopupinfo.emit(feedback)
+	siguiente_mail.disabled = false
 	desactivarBotones()
 
 # -----------------------------------------------------------------
 # FUNCIONES DE LAS HERRAMIENTAS
 # -----------------------------------------------------------------
-func _on_link_inspeccionado(meta: Variant) -> void: # 'meta' es la URL real del enlace en el que se hizo clic
-	var info_texto = "Inspeccionando enlace...\n\n"
-	info_texto += "Destino real: " + str(meta)
-	print("Texto armado: "+ info_texto)
-	info_popup.show_info(info_texto)
+func _on_link_inspeccionado(meta: Variant) -> void:
+	GameManager.record_attempt(false)
+	var feedback = "ERROR: Clickeaste un Link Sospechoso. \n\n"
+	showpopupinfo.emit(feedback)
+	desactivarBotones()
+	siguiente_mail.disabled = false
 
 func _on_inspeccionar_remitente() -> void:
 	var info_texto = "Verificando remitente...\n\n"
 	info_texto += "Remitente visible: " + email_actual.remitente_visible + "\n"
-	info_texto += "Remitente real (Header): " + email_actual.remitente_real
-	
+
 	info_popup.show_info(info_texto)
 
 func _on_escanear_adjuntos() -> void:
@@ -123,7 +126,7 @@ func _on_help_asked():
 func animateRichText(text : RichTextLabel):
 	text.visible_characters = 0
 	var tween = create_tween()
-	tween.tween_property(text, "visible_characters" , text.text.length(), text.text.length() / (speed *2))
+	tween.tween_property(text, "visible_characters" , text.text.length(), text.text.length() / (speed *4))
 	await tween.finished
 	return
 
@@ -154,3 +157,12 @@ func makevisible():
 func stop():
 	siguiente_mail.disabled = true
 	desactivarBotones()
+
+func hover(meta : Variant, init : bool):
+	if(init):
+		var text = str(meta).replace("meta=","").replace("{","").replace("}","")
+		tooltip.text = text
+		tooltip_container.position = get_local_mouse_position()
+		tooltip_container.show()
+	else:
+		tooltip_container.hide()
