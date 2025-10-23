@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnwj6iinh1x4"]
+[gd_scene load_steps=5 format=3 uid="uid://bnwj6iinh1x4"]
 
 [ext_resource type="Script" uid="uid://b3uvstvwpaivd" path="res://Script/tutorial.gd" id="1_ka2pi"]
+[ext_resource type="Texture2D" uid="uid://vju6bfhb07b6" path="res://Assets/PNG/WindowTut.tres" id="3_i6t4g"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="3_omtrn"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="3_p8jf4"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -12,29 +14,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ka2pi")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="VentanaContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.156
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.891
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 0.287994
-offset_right = -0.432007
+offset_left = -400.0
+offset_top = -216.0
+offset_right = 400.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_omtrn")
-fit_content = true
+theme_override_styles/panel = ExtResource("3_p8jf4")
 
-[node name="GetTextButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
-offset_right = 80.0
-grow_vertical = 0
+[node name="GetTextButton" type="Button" parent="VentanaContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 theme = ExtResource("3_omtrn")
 text = "Siguiente"
 
-[connection signal="pressed" from="GetTextButton" to="." method="getText"]
+[node name="WindowTut" type="Sprite2D" parent="VentanaContainer"]
+z_index = -1
+texture_filter = 1
+position = Vector2(400, 212)
+scale = Vector2(2.40476, 1.6875)
+texture = ExtResource("3_i6t4g")
+
+[node name="TextoContainer" type="PanelContainer" parent="VentanaContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_p8jf4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VentanaContainer/TextoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_omtrn")
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VentanaContainer/GetTextButton" to="." method="getText"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnap8k3ngr8yv"]
+[gd_scene load_steps=8 format=3 uid="uid://cnap8k3ngr8yv"]
 
 [ext_resource type="Script" uid="uid://bhr0ryrmtrcpp" path="res://Script/escritorio.gd" id="1_xx3jy"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="2_3j7i0"]
 [ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="2_ronj5"]
+[ext_resource type="Texture2D" uid="uid://0rw42gayfpo2" path="res://Assets/PNG/Window.tres" id="4_ronj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ronj5"]
 bg_color = Color(0.84624, 0.302478, 0.365218, 1)
@@ -203,6 +204,13 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_3j7i0")
 horizontal_alignment = 1
+
+[node name="Window" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(3.42857, 2.53125)
+texture = ExtResource("4_ronj5")
 
 [connection signal="meta_clicked" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="_on_link_inspeccionado"]
 [connection signal="meta_hover_ended" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="hover" binds= [false]]

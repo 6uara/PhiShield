@@ -1,7 +1,7 @@
 extends Control
 class_name Tutorial
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var textoTutorial: RichTextLabel = %RichTextLabel
 
 signal tutorialFinished
 
@@ -19,8 +19,9 @@ func populate():
 	text = "¿Qué es el Phishing? 
 	En pocas palabras: es una estafa.
 	Los ciberdelincuentes se hacen pasar por alguien de confianza (tu banco, un servicio técnico, una red social o incluso un colega de trabajo) y te envían un correo.
-	Su objetivo es simple: engañarte para que hagas clic en un enlace malicioso o descargues un archivo peligroso. 
-	¿Por qué es tan peligroso? 
+	Su objetivo es simple: engañarte para que hagas clic en un enlace malicioso o descargues un archivo peligroso."
+	tutotext.append(text)
+	text = "¿Por qué es tan peligroso? 
 	Para las personas: Un solo clic puede terminar en el robo de tu identidad, la pérdida de dinero de tus cuentas bancarias o el secuestro de tus redes sociales.
 	Para la empresa: Una sola cuenta comprometida puede llevar a una brecha de seguridad masiva, el robo de datos de millones de clientes y pérdidas financieras irreparables.
 	Tu trabajo es que eso no suceda."
@@ -51,8 +52,8 @@ func populate():
 func getText():
 	if(_index < tutotext.size()):
 		var texto = tutotext[_index]
-		rich_text_label.visible_characters = 0
-		rich_text_label.text = texto
+		textoTutorial.visible_characters = 0
+		textoTutorial.text = texto
 		animateText()
 		_index += 1
 	else:  
@@ -63,4 +64,4 @@ func getText():
 
 func animateText():
 	var tween = create_tween()
-	tween.tween_property(rich_text_label, "visible_characters" , rich_text_label.text.length(), rich_text_label.text.length() / speed)
+	tween.tween_property(textoTutorial, "visible_characters" , textoTutorial.text.length(), textoTutorial.text.length() / speed)
