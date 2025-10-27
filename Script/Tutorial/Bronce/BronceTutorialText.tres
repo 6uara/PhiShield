@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TutorialTextTemplate" load_steps=2 format=3 uid="uid://bdts6k3mgq2gx"]
 
-[ext_resource type="Script" uid="uid://chppcwnudyarl" path="res://Tutorial/tutorialtext.gd" id="1_lcoj5"]
+[ext_resource type="Script" uid="uid://chppcwnudyarl" path="res://Script/Tutorial/tutorialtext.gd" id="1_lcoj5"]
 
 [resource]
 script = ExtResource("1_lcoj5")

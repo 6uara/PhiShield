@@ -37,11 +37,13 @@ func volveralmenu():
 
 func siguientemodulo():
 	match GameManager.current_module:
-		difficultyEnums.difficulty.Bronce:
-			get_tree().change_scene_to_file("res://Scenes/Plata.tscn")
-		difficultyEnums.difficulty.Plata:
-			get_tree().change_scene_to_file("res://Scenes/Oro.tscn")
+		#difficultyEnums.difficulty.Bronce:
+			#get_tree().change_scene_to_file("res://Scenes/Plata.tscn")
+		#difficultyEnums.difficulty.Plata:
+			#get_tree().change_scene_to_file("res://Scenes/Oro.tscn")
 		difficultyEnums.difficulty.Oro:
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		_:
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func reintentarmodulo():

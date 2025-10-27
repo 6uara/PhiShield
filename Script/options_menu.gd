@@ -17,6 +17,7 @@ const SFX_BUS_NAME = "SFX"
 @onready var fullscreen_toggle: CheckBox = %FullscreenToggle
 @onready var vsync_toggle: CheckBox = %VSyncToggle
 @onready var back_button: Button = %BackButton
+@onready var back_button_2: Button = %BackButton2
 
 # Variables para guardar los índices de los buses
 var _master_bus: int
@@ -46,7 +47,7 @@ func _ready() -> void:
 	resolution_button.item_selected.connect(_on_resolution_selected)
 	fullscreen_toggle.toggled.connect(_on_fullscreen_toggled)
 	vsync_toggle.toggled.connect(_on_vsync_toggled)
-	
+	back_button_2.pressed.connect(_on_back_pressed)
 	back_button.pressed.connect(_on_back_pressed)
 	
 	load_options()

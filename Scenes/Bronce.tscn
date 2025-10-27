@@ -13,13 +13,21 @@ texture_filter = 1
 [node name="PopUpLocation" type="Node2D" parent="."]
 position = Vector2(80, 55)
 
-[node name="Fondo" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(576, 324)
-scale = Vector2(1.87013, 1.19118)
-texture = ExtResource("1_1sgc7")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fondo" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -536.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.87013, 1.19118)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_1sgc7")
 
 [node name="Tutorial" parent="CanvasLayer" instance=ExtResource("3_eu4a3")]
 unique_name_in_owner = true

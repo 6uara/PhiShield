@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkwlh2yg028ga"]
 
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="1_5qi0s"]
-[ext_resource type="Script" uid="uid://duinbd463cuit" path="res://Scenes/eo_module.gd" id="3_dltu0"]
+[ext_resource type="Script" uid="uid://duinbd463cuit" path="res://Script/eo_module.gd" id="3_dltu0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qi0s"]
 bg_color = Color(0, 0, 0, 1)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqfacbq0af78h"]
+
+[ext_resource type="Script" uid="uid://ty4fiumupmkf" path="res://Script/sound_manager.gd" id="1_32i44"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_32i44")
+
+[node name="MasterAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MusciAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

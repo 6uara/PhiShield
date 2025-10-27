@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgt4lpvarkwvp"]
+[gd_scene load_steps=7 format=3 uid="uid://cgt4lpvarkwvp"]
 
 [ext_resource type="Script" uid="uid://bisdh0sv3iiha" path="res://Script/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://7nyt06yrvxoe" path="res://Scenes/options_menu.tscn" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://dnoas5254q5oj" path="res://Script/FotoPerfil.gd" id="3_1ehe0"]
+[ext_resource type="StyleBox" uid="uid://cqavqai4uhmqs" path="res://ButtonTexture.tres" id="3_n45e2"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="4_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://2j5cq7ixu6v0" path="res://Assets/PNG/menuFondo.tres" id="6_opfnp"]
 
 [node name="MainMenu" type="Control"]
 texture_filter = 1
@@ -25,33 +27,49 @@ offset_bottom = -4.0
 
 [node name="OptionsQuit" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -66.0
-offset_right = 236.0
-grow_vertical = 0
+anchors_preset = -1
+anchor_left = 0.065
+anchor_top = 0.707
+anchor_right = 0.27
+anchor_bottom = 0.809
+offset_left = 0.119995
+offset_top = -0.136017
+offset_right = -0.0400085
+offset_bottom = -0.231995
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="OptionsButton" type="Button" parent="OptionsQuit"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_n45e2")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="OptionsQuit"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_n45e2")
 text = "Quit"
 
 [node name="PlayContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_right = 195.0
-offset_bottom = 66.0
+anchors_preset = -1
+anchor_left = 0.076
+anchor_top = 0.099
+anchor_right = 0.245
+anchor_bottom = 0.201
+offset_left = -0.552002
+offset_top = -0.152008
+offset_right = -0.23999
+offset_bottom = -0.248001
 
 [node name="PlayButton" type="Button" parent="PlayContainer"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_n45e2")
 text = "Play"
 
 [node name="SelectDificulty" type="OptionButton" parent="PlayContainer"]
 visible = false
 layout_mode = 2
+theme_override_styles/normal = ExtResource("3_n45e2")
 item_count = 3
 popup/item_0/text = "Bronce"
 popup/item_0/id = 0
@@ -67,11 +85,15 @@ one_shot = true
 [node name="FotoPerfil" type="PanelContainer" parent="." node_paths=PackedStringArray("profile_pic", "change_button", "file_dialog")]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_bottom = 74.0
+anchors_preset = -1
+anchor_left = 0.787
+anchor_top = 0.073
+anchor_right = 0.939
+anchor_bottom = 0.273
+offset_left = 0.375916
+offset_top = -0.304005
+offset_right = 0.271973
+offset_bottom = 0.095993
 grow_horizontal = 0
 script = ExtResource("3_1ehe0")
 profile_pic = NodePath("VBoxContainer/TextureRect")
@@ -96,7 +118,20 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("4_ce3w2")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("3_n45e2")
 text = "Cambiar Foto"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_opfnp")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="OptionsQuit/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="OptionsQuit/QuitButton" to="." method="_on_quit_button_pressed"]
