@@ -16,12 +16,15 @@ position = Vector2(80, 55)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Fondo" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
 texture_filter = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = -0.007
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -536.0
-offset_bottom = -104.0
+anchor_bottom = 1.099
+offset_left = 4.064
+offset_right = -538.0
+offset_bottom = -114.152
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.87013, 1.19118)
@@ -67,6 +70,7 @@ offset_bottom = -47.848
 
 [node name="EoModule" parent="CanvasLayer" instance=ExtResource("5_1sgc7")]
 visible = false
+z_index = 2
 mouse_filter = 2
 
 [node name="Popup" parent="." node_paths=PackedStringArray("popuptr") instance=ExtResource("6_x8s45")]

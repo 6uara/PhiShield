@@ -1,25 +1,29 @@
 # AudioManager.gd
 extends Node
+class_name AudioManagerScript
+@onready var master: AudioStreamPlayer = %Master
+@onready var vfx: AudioStreamPlayer = %VFX
+@onready var music: AudioStreamPlayer = %Music
 
-@onready var master_audio: AudioStreamPlayer = %MasterAudio
-@onready var musci_audio: AudioStreamPlayer = %MusciAudio
-@onready var sfx_audio: AudioStreamPlayer = %SFXAudio
 
+const AUDIO_LIBRARY = preload("res://Audio/SoundLibrary.tres")
 const MASTER_BUS_NAME = "Master"
 const MUSIC_BUS_NAME = "Music"
 const SFX_BUS_NAME = "SFX"
 
 # --- FUNCIONES DE REPRODUCCIÓN ---
 
-func play_music(stream: AudioStream):
-	musci_audio.stream = stream
-	musci_audio.play()
+func play_music():
+	var rng = RandomNumberGenerator.new()
+	var n = rng.randi_range(0,AUDIO_LIBRARY.music.size()-1)
+	music.stream = AUDIO_LIBRARY.music[n]
+	music.play()
 
-func stop_music(): musci_audio.stop()
+func stop_music(): music.stop()
 
 func play_sfx_limited(stream: AudioStream):
-	sfx_audio.stream = stream
-	sfx_audio.play()
+	vfx.stream = stream
+	vfx.play()
 
 func play_sfx(stream: AudioStream):
 	var sfx_player = AudioStreamPlayer.new()

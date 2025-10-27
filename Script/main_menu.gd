@@ -4,6 +4,7 @@ extends Control
 @onready var options_menu: Control = $OptionsMenu
 
 func _ready() -> void:
+	AudioManager.play_music()
 	var moduloscompletados = GameManager.is_module_completed(difficultyEnums.difficulty.Plata)
 	if(moduloscompletados):
 		select_dificulty.set_item_disabled(1,false)

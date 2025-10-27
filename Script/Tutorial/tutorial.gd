@@ -33,20 +33,26 @@ func populate():
 	Los atacantes mienten en dos lugares clave:"
 	tutotext.append(text)
 	text = "EL REMITENTE (El 'De'):
-		La Máscara: El nombre puede decir 'Soporte Banco Global'.
-		La Realidad: La dirección real puede ser soporte.banco@cuenta-gratis123.xyz."
+		El nombre puede decir 'Soporte Banco Global'.
+		La dirección real puede ser soporte.banco@cuenta-gratis123.xyz.
+		Siempre revisa el mail del remitente para verificar que concuerde con el oficial. 
+		estate atento a cualquier pequena diferencia ya que el objetivo es que creas que son el real."
 	tutotext.append(text)
 	text= "LOS ENLACES (Los 'Links'):
-		La Máscara: El texto del enlace puede decir bancoglobal.com/login.
-		La Realidad: El enlace real puede apuntar a bancogIobal-seguro.com (¡fíjate en la 'i' mayúscula!)."
+		El texto del enlace puede decir bancoglobal.com/login.
+		Pero el enlace real puede apuntar a bancogIobal-seguro.com (¡fíjate en la 'i' mayúscula!).
+		En estos casos se debe revisar que el dominio concuerde con la direccion oficial de la entidad"
 	tutotext.append(text)
 	text = "Cómo usar tus herramientas:
-	Para cada correo que recibas, deberás usar tus herramientas de análisis antes de tomar una decisión:Herramienta 
-	[Verificar Dominio]: Úsala para ver la dirección de correo real del remitente.Herramienta 
-	[Inspeccionar Enlace]: Haz clic en cualquier enlace del correo. Esto no lo abrirá, sino que te mostrará su destino real.
-	El [Manual]: Consulta tu manual. ¿Coincide el dominio real con el dominio oficial de la empresa?Decide: 
-	Si todo es correcto, presiona [Confiar]. Si algo es sospechoso, presiona [Reportar].
-	Estás listo para empezar. Abre tu bandeja de entrada y comencemos.¡Presta atención a los detalles!"
+		Para cada correo que recibas, deberás usar tus herramientas de análisis antes de tomar una decisión:
+		[Verificar Dominio]: Úsala para ver la dirección de correo real del remitente. 
+		[Inspeccionar Enlace]: Haz clic en cualquier enlace del correo. Esto no lo abrirá, sino que te mostrará su destino real.
+		[Manual]: Consulta tu manual. ¿Coincide el dominio real con el dominio oficial de la empresa?Decide: 
+		Si todo es correcto, presiona [No es Phishing]. Si algo es sospechoso, presiona [Es Phishing].
+		Estás listo para empezar. Abre tu bandeja de entrada y comencemos.¡Presta atención a los detalles!"
+	tutotext.append(text)
+	text = "Si todo es correcto, presiona [No es Phishing]. Si algo es sospechoso, presiona [Es Phishing].
+		Estás listo para empezar. Abre tu bandeja de entrada y comencemos.¡Presta atención a los detalles!"
 	tutotext.append(text)
 
 func getText():

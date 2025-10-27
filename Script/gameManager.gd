@@ -7,7 +7,7 @@ extends Node
 # Se emite cada vez que el jugador hace un intento (para actualizar la UI)
 signal trial_updated(successes, failures, total_attempts)
 # Se emite cuando se completan los 5 intentos
-signal trial_finished(module_completed, unlocked_next_module)
+signal trial_finished(module_completed, unlocked_next_module, current_module)
 # Se emite cuando los datos del jugador (nombre, etc.) cambian
 signal player_data_changed(player_name, completed_modules)
 
@@ -117,7 +117,7 @@ func _finish_trial() -> void:
 		next_module = get_next_module(current_module)
 		save_game()
 		
-	emit_signal("trial_finished", passed, next_module)
+	emit_signal("trial_finished", passed, next_module,current_module)
 
 func _finish_tutorial() -> void:
 	_current_tutorial.visible = false

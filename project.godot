@@ -22,7 +22,7 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 GameManager="*res://Script/gameManager.gd"
 EmailGenerator="*res://Email/EmailGenerator.gd"
-SoundManager="*res://Script/sound_manager.gd"
+AudioManager="*res://Scenes/audio_manager.tscn"
 
 [display]
 

@@ -9,13 +9,13 @@ var speed = 18
 func _ready() -> void:
 	GameManager.trial_finished.connect(trialfinished)
 
-func trialfinished(paso : bool, dificultadsiguiente : Variant):
+func trialfinished(paso : bool, dificultadsiguiente : Variant, dificultadactual : Variant):
 	print("Se llamo al eom")
 	self.show()
 	if(paso):
 		print("Paso")
 		texto_eo_modulo.text = "Felicitaciones!!
-		Has completado con exito el modulo " + difficultyEnums.difficulty.keys()[dificultadsiguiente]
+		Has completado con exito el modulo " + difficultyEnums.difficulty.keys()[dificultadactual]
 		animateRichText(texto_eo_modulo)
 	else:
 		print("No Paso")

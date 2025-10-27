@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d368bjhhih3co"]
+
+[ext_resource type="Script" uid="uid://ty4fiumupmkf" path="res://Script/sound_manager.gd" id="1_sm2tf"]
+[ext_resource type="AudioStream" uid="uid://bt2w1rg8w046a" path="res://Audio/Music/After.ogg" id="2_4tj6f"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_sm2tf")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_4tj6f")
+bus = &"Music"
+parameters/looping = true
+
+[node name="VFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="Master" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
