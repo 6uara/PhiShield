@@ -1,19 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://mahkmmbxbkuc"]
+[gd_scene load_steps=7 format=3 uid="uid://mahkmmbxbkuc"]
 
 [ext_resource type="Texture2D" uid="uid://cnegsrkv4j6uh" path="res://Assets/PNG/MonitorAtlas.tres" id="1_1sgc7"]
 [ext_resource type="PackedScene" uid="uid://cnap8k3ngr8yv" path="res://Scenes/escritorio.tscn" id="2_pw11p"]
 [ext_resource type="PackedScene" uid="uid://bnwj6iinh1x4" path="res://Scenes/tutorial.tscn" id="3_eu4a3"]
-[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="3_xcom3"]
 [ext_resource type="PackedScene" uid="uid://bsk4djq47krd0" path="res://Scenes/pausa.tscn" id="4_65fw0"]
-[ext_resource type="Script" uid="uid://b1n7pxnh3bwk8" path="res://Script/info_popup.gd" id="4_eu4a3"]
 [ext_resource type="PackedScene" uid="uid://dkwlh2yg028ga" path="res://Scenes/eo_module.tscn" id="5_1sgc7"]
-[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="5_65fw0"]
-[ext_resource type="FontFile" uid="uid://cg45djd3sgfio" path="res://Font/PixelifySans-Bold.ttf" id="6_1sgc7"]
-[ext_resource type="StyleBox" uid="uid://cfgih13nykl1r" path="res://OnlyBorder.tres" id="7_nmjyb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_dgkkd"]
-font = ExtResource("6_1sgc7")
-font_size = 12
+[ext_resource type="PackedScene" uid="uid://ggx3teopdlhm" path="res://Scenes/popup.tscn" id="6_x8s45"]
 
 [node name="Bronce" type="Node2D"]
 texture_filter = 1
@@ -32,77 +24,44 @@ texture = ExtResource("1_1sgc7")
 [node name="Tutorial" parent="CanvasLayer" instance=ExtResource("3_eu4a3")]
 unique_name_in_owner = true
 anchors_preset = -1
-anchor_left = 0.066
-anchor_top = 0.09
-anchor_right = 0.929
-anchor_bottom = 0.855
-offset_left = -12.032
-offset_top = -18.32
-offset_right = -12.208
-offset_bottom = -18.04
+anchor_left = 0.167
+anchor_top = 0.099
+anchor_right = 0.889
+anchor_bottom = 0.79
+offset_left = -0.384018
+offset_top = -0.152008
+offset_right = -32.1281
+offset_bottom = 0.0799866
 scale = Vector2(1.04, 1)
-mouse_filter = 2
 
 [node name="Escritorio" parent="CanvasLayer" instance=ExtResource("2_pw11p")]
 unique_name_in_owner = true
 visible = false
 anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.062
-anchor_right = 0.944
-anchor_bottom = 0.827
-offset_left = -0.512001
-offset_top = -0.176003
-offset_right = 0.511963
-offset_bottom = 0.104004
+anchor_left = 0.208
+anchor_top = 0.123
+anchor_right = 0.931
+anchor_bottom = 0.741
+offset_left = 0.384003
+offset_top = 0.295998
+offset_right = -0.512085
+offset_bottom = -0.16803
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 2
 
 [node name="Pausa" parent="CanvasLayer" instance=ExtResource("4_65fw0")]
-mouse_filter = 2
+anchors_preset = -1
+anchor_bottom = 0.901
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -47.848
 
 [node name="EoModule" parent="CanvasLayer" instance=ExtResource("5_1sgc7")]
 visible = false
+mouse_filter = 2
 
-[node name="Popup" type="PopupPanel" parent="." node_paths=PackedStringArray("popuptr")]
+[node name="Popup" parent="." node_paths=PackedStringArray("popuptr") instance=ExtResource("6_x8s45")]
 unique_name_in_owner = true
-auto_translate_mode = 1
-size = Vector2i(250, 200)
-max_size = Vector2i(250, 200)
-theme_override_styles/panel = ExtResource("3_xcom3")
-script = ExtResource("4_eu4a3")
+visible = false
 popuptr = NodePath("../PopUpLocation")
-
-[node name="TextoPopUp" type="Label" parent="Popup"]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.996
-offset_right = 250.0
-offset_bottom = 200.0
-theme = ExtResource("5_65fw0")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-label_settings = SubResource("LabelSettings_dgkkd")
-horizontal_alignment = 1
-autowrap_mode = 1
-
-[node name="CerrarPopUp" type="Button" parent="Popup"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 250.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_65fw0")
-theme_override_styles/normal = ExtResource("7_nmjyb")
-icon_alignment = 1
-vertical_icon_alignment = 2
-expand_icon = true
-
-[node name="Timer" type="Timer" parent="Popup"]
-wait_time = 10.0
-one_shot = true
-
-[connection signal="showpopupinfo" from="CanvasLayer/Escritorio" to="Popup" method="show_info"]
-[connection signal="timeout" from="Popup/Timer" to="Popup" method="_on_timer_timeout"]

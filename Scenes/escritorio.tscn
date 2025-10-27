@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnap8k3ngr8yv"]
+[gd_scene load_steps=9 format=3 uid="uid://cnap8k3ngr8yv"]
 
 [ext_resource type="Script" uid="uid://bhr0ryrmtrcpp" path="res://Script/escritorio.gd" id="1_xx3jy"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="2_3j7i0"]
 [ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="2_ronj5"]
+[ext_resource type="Theme" uid="uid://b3i1cklm1ra6t" path="res://Scenes/mailfont.tres" id="3_hc5dm"]
 [ext_resource type="Texture2D" uid="uid://0rw42gayfpo2" path="res://Assets/PNG/Window.tres" id="4_ronj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ronj5"]
@@ -31,17 +32,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_xx3jy")
 
 [node name="MailContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.278
-anchor_right = 0.999
-anchor_bottom = 0.864
+anchor_top = 0.074
+anchor_right = 0.979
+anchor_bottom = 0.778
 offset_left = -0.256042
-offset_right = 0.151855
-offset_bottom = -31.872
+offset_top = 0.0480003
+offset_right = 0.192017
+offset_bottom = -0.144043
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
@@ -56,26 +60,26 @@ layout_mode = 2
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("2_3j7i0")
+theme = ExtResource("3_hc5dm")
 
 [node name="Asunto" type="Label" parent="MailContainer/VBoxContainer"]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("2_3j7i0")
+theme = ExtResource("3_hc5dm")
 
 [node name="CuerpoMail" type="RichTextLabel" parent="MailContainer/VBoxContainer"]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("2_3j7i0")
+theme = ExtResource("3_hc5dm")
 bbcode_enabled = true
 fit_content = true
 
 [node name="AdjuntosContainer" type="HBoxContainer" parent="MailContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_3j7i0")
+theme = ExtResource("3_hc5dm")
 
 [node name="ButtonsContainer" type="PanelContainer" parent="."]
 texture_filter = 1
@@ -98,6 +102,14 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
 
+[node name="SiguienteMail" type="Button" parent="ButtonsContainer/Decision"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_3j7i0")
+text = "Siguiente Mail"
+
 [node name="PhishingButton" type="Button" parent="ButtonsContainer/Decision"]
 unique_name_in_owner = true
 texture_filter = 1
@@ -117,14 +129,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_hc5dm")
 disabled = true
 text = "No es Phishing"
-
-[node name="SiguienteMail" type="Button" parent="ButtonsContainer"]
-unique_name_in_owner = true
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("2_3j7i0")
-text = "Siguiente Mail"
 
 [node name="Tools" type="PanelContainer" parent="."]
 texture_filter = 1
@@ -180,22 +184,12 @@ theme_override_styles/normal = ExtResource("2_ronj5")
 disabled = true
 text = "Guia"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.91
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -5.67999
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = ExtResource("2_ronj5")
-
 [node name="TooltipContainer" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 30.0
+mouse_filter = 2
 theme = ExtResource("2_3j7i0")
 
 [node name="Tooltip" type="Label" parent="TooltipContainer"]
@@ -205,19 +199,26 @@ size_flags_vertical = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_3j7i0")
 horizontal_alignment = 1
 
-[node name="Window" type="Sprite2D" parent="."]
-z_index = -2
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
 texture_filter = 1
-position = Vector2(576, 324)
-scale = Vector2(3.42857, 2.53125)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.264
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.127991
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("4_ronj5")
 
 [connection signal="meta_clicked" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="_on_link_inspeccionado"]
 [connection signal="meta_hover_ended" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="hover" binds= [false]]
 [connection signal="meta_hover_started" from="MailContainer/VBoxContainer/CuerpoMail" to="." method="hover" binds= [true]]
+[connection signal="pressed" from="ButtonsContainer/Decision/SiguienteMail" to="." method="cargar_siguiente_email"]
 [connection signal="pressed" from="ButtonsContainer/Decision/PhishingButton" to="." method="_on_decision_tomada" binds= [true]]
 [connection signal="pressed" from="ButtonsContainer/Decision/NoPhishingButton" to="." method="_on_decision_tomada" binds= [false]]
-[connection signal="pressed" from="ButtonsContainer/SiguienteMail" to="." method="cargar_siguiente_email"]
 [connection signal="pressed" from="Tools/VBoxContainer/VerificarDominio" to="." method="_on_inspeccionar_remitente"]
 [connection signal="pressed" from="Tools/VBoxContainer/EscanearAdjunto" to="." method="_on_escanear_adjuntos"]
 [connection signal="pressed" from="Tools/VBoxContainer/Help" to="." method="_on_help_asked"]

@@ -6,7 +6,7 @@ class_name InfoPopUp
 @onready var close_button: Button = $CerrarPopUp
 @onready var timer: Timer = $Timer
 
-@export var helptext : String
+var helptext : String
 @export var popuptr : Node2D
 
 var speed = 18

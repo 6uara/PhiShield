@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://ggx3teopdlhm"]
+
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="1_fx8xh"]
+[ext_resource type="Script" uid="uid://b1n7pxnh3bwk8" path="res://Script/info_popup.gd" id="2_6p7fm"]
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="3_0r4hp"]
+[ext_resource type="FontFile" uid="uid://cg45djd3sgfio" path="res://Font/PixelifySans-Bold.ttf" id="4_e41gm"]
+[ext_resource type="StyleBox" uid="uid://cfgih13nykl1r" path="res://OnlyBorder.tres" id="5_4s04n"]
+[ext_resource type="Texture2D" uid="uid://cpfgui1p7coq2" path="res://Assets/PNG/MiniWindow.tres" id="6_6p7fm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgkkd"]
+font = ExtResource("4_e41gm")
+font_size = 12
+
+[node name="Popup" type="PopupPanel"]
+auto_translate_mode = 1
+size = Vector2i(250, 200)
+visible = true
+max_size = Vector2i(250, 200)
+theme_override_styles/panel = ExtResource("1_fx8xh")
+script = ExtResource("2_6p7fm")
+
+[node name="TextoPopUp" type="Label" parent="."]
+z_index = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.996
+offset_right = 250.0
+offset_bottom = 200.0
+theme = ExtResource("3_0r4hp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "asd"
+label_settings = SubResource("LabelSettings_dgkkd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="CerrarPopUp" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_0r4hp")
+theme_override_styles/normal = ExtResource("5_4s04n")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="MiniWindow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(123.5, 100.25)
+scale = Vector2(1.91538, 1.3951)
+texture = ExtResource("6_6p7fm")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

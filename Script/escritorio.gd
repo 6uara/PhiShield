@@ -45,7 +45,7 @@ func _ready() -> void:
 func cargar_siguiente_email() -> void:
 	email_actual = EmailGenerator.get_next_email(current_difficulty)
 
-	remitente_label.text = "De: " + email_actual.remitente_visible
+	remitente_label.text = "De: " + email_actual.remitente_visible 
 	asunto_label.text = "Asunto: " + email_actual.asunto
 	cuerpo_email.text = email_actual.cuerpo
 	animateRichText(remitente_label)
