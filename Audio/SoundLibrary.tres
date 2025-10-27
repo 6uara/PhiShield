@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="sound_library" load_steps=11 format=3 uid="uid://bt5akfp2ux2r1"]
+
+[ext_resource type="AudioStream" uid="uid://b0ittrlgk63i8" path="res://Audio/Music/420.ogg" id="1_2k8bv"]
+[ext_resource type="AudioStream" uid="uid://cuhoh4mh0sc80" path="res://Audio/VFX/Minimalist5.ogg" id="1_apf40"]
+[ext_resource type="Script" uid="uid://dfsqp0d5ydx4j" path="res://Script/sound_library.gd" id="1_qdmb5"]
+[ext_resource type="AudioStream" uid="uid://bt2w1rg8w046a" path="res://Audio/Music/After.ogg" id="2_n0uwx"]
+[ext_resource type="AudioStream" uid="uid://c3g44t2d17oot" path="res://Audio/VFX/Minimalist7.ogg" id="2_qw5tp"]
+[ext_resource type="AudioStream" uid="uid://cq1rpoh28p8yp" path="res://Audio/Music/Evening Mood.ogg" id="3_857lm"]
+[ext_resource type="AudioStream" uid="uid://bougnsxy6x5en" path="res://Audio/Music/Homework.ogg" id="4_uxilr"]
+[ext_resource type="AudioStream" uid="uid://cy3kpewpkkd0v" path="res://Audio/Music/Morning Walk.ogg" id="5_apf40"]
+[ext_resource type="AudioStream" uid="uid://bpeufv3035sia" path="res://Audio/VFX/Minimalist1.ogg" id="7_n0uwx"]
+[ext_resource type="AudioStream" uid="uid://bfshuu6njpupy" path="res://Audio/VFX/African3.ogg" id="8_3quxx"]
+
+[resource]
+script = ExtResource("1_qdmb5")
+music = Array[AudioStream]([ExtResource("1_2k8bv"), ExtResource("2_n0uwx"), ExtResource("3_857lm"), ExtResource("4_uxilr"), ExtResource("5_apf40")])
+vfxbutton = ExtResource("7_n0uwx")
+closetab = ExtResource("2_qw5tp")
+opendropdown = ExtResource("8_3quxx")
+closedropdown = ExtResource("1_apf40")
+metadata/_custom_type_script = "uid://dfsqp0d5ydx4j"
