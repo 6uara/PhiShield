@@ -68,6 +68,7 @@ unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_hc5dm")
+fit_content = true
 
 [node name="Asunto" type="Label" parent="MailContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -143,11 +144,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.001
 anchor_top = 0.41
-anchor_right = 0.171
+anchor_right = 0.264
 anchor_bottom = 0.58
 offset_left = -0.152
-offset_top = 0.319977
-offset_right = 107.008
+offset_top = 0.319946
+offset_right = -0.127991
 offset_bottom = 0.159973
 grow_vertical = 2
 mouse_filter = 2

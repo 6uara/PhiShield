@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp4miagyxxobr"]
 
-[ext_resource type="Script" uid="uid://djxl8gtilnn1f" path="res://Scenes/trophy_container.gd" id="1_ph6od"]
+[ext_resource type="Script" uid="uid://djxl8gtilnn1f" path="res://Script/trophy_container.gd" id="1_ph6od"]
 [ext_resource type="Texture2D" uid="uid://b1kf614xsm05c" path="res://Assets/PNG/bronce.tres" id="2_kmayt"]
 [ext_resource type="Texture2D" uid="uid://7di3qgibt0dx" path="res://Assets/PNG/plata.tres" id="3_vppi2"]
 [ext_resource type="Texture2D" uid="uid://1gvj5ac8am58" path="res://Assets/PNG/oro.tres" id="4_haq2o"]

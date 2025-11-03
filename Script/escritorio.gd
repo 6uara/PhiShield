@@ -1,6 +1,6 @@
 # Desktop.gd
 extends Control
-
+class_name Escritorio
 @export var current_difficulty: difficultyEnums.difficulty = difficultyEnums.difficulty.Bronce
 
 # --- NODOS DE LA INTERFAZ ---
@@ -70,7 +70,7 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 	if fue_correcto:
 		GameManager.record_attempt(true)
 		var feedback = "Correcto!! \n" + "Ese Mail era Phishing"
-		showpopupinfo.emit(feedback)
+		info_popup.show_info(feedback)
 	else:
 		GameManager.record_attempt(false)
 		var tipo_email = "LEGÍTIMO"
@@ -82,7 +82,7 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 			feedback += "Pistas perdidas:\n"
 			for pista in email_actual.pistas:
 				feedback += "- " + pista + "\n"
-		showpopupinfo.emit(feedback)
+		info_popup.show_info(feedback)
 	siguiente_mail.disabled = false
 	desactivarBotones()
 

@@ -118,13 +118,26 @@ func _finish_trial() -> void:
 		save_game()
 		
 	emit_signal("trial_finished", passed, next_module,current_module)
+	if Engine.is_editor_hint():
+		print("Se esta jugando desde el editor")
+		return
+	else:
+		var params = {
+		"module_name": difficultyEnums.difficulty.keys()[current_module],
+		"passed_module": passed,
+		"correct_answers": current_successes,
+		"incorrect_answers": current_failures
+		}
+		print("Info Enviada")
+		AnalyticsManager.send_event("trial_finished", params)
+
 
 func _finish_tutorial() -> void:
 	_current_tutorial.visible = false
 	_current_desktop.visible = true
 
 # -----------------------------------------------------------------
-# SISTEMA DE GUARDADO (Automático)
+# SISTEMA DE GUARDADO 
 # -----------------------------------------------------------------
 
 func save_game() -> void:
