@@ -7,7 +7,7 @@ signal tutorialFinished
 
 var tutotext : Array[String]
 var _index = 0
-var speed = 18
+var speed : float = 18
 func _ready() -> void:
 	populate()
 

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b3uvstvwpaivd" path="res://Script/Tutorial/tutorial.gd" id="1_ka2pi"]
 [ext_resource type="Texture2D" uid="uid://vju6bfhb07b6" path="res://Assets/PNG/WindowTut.tres" id="3_i6t4g"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="3_omtrn"]
-[ext_resource type="StyleBox" uid="uid://cqavqai4uhmqs" path="res://ButtonTexture.tres" id="3_p1f1o"]
-[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="3_p8jf4"]
+[ext_resource type="StyleBox" uid="uid://cqavqai4uhmqs" path="res://Assets/Fonts&Styles/ButtonTexture.tres" id="3_p1f1o"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://Assets/Fonts&Styles/BoxSinFondo.tres" id="3_p8jf4"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3

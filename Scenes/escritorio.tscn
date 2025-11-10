@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bhr0ryrmtrcpp" path="res://Script/escritorio.gd" id="1_xx3jy"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="2_3j7i0"]
-[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="2_ronj5"]
-[ext_resource type="Theme" uid="uid://b3i1cklm1ra6t" path="res://mailfont.tres" id="3_hc5dm"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://Assets/Fonts&Styles/BoxSinFondo.tres" id="2_ronj5"]
+[ext_resource type="Theme" uid="uid://b3i1cklm1ra6t" path="res://Assets/Fonts&Styles/mailfont.tres" id="3_hc5dm"]
 [ext_resource type="Texture2D" uid="uid://0rw42gayfpo2" path="res://Assets/PNG/Window.tres" id="4_ronj5"]
 [ext_resource type="Texture2D" uid="uid://oc21k0hh1a3q" path="res://Assets/PNG/hover.tres" id="5_2dyg3"]
 
@@ -206,6 +206,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_hc5dm")
 
 [node name="Tooltip" type="Label" parent="TooltipContainer"]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_3j7i0")

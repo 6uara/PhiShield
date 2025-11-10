@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://ggx3teopdlhm"]
 
-[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://BoxSinFondo.tres" id="1_fx8xh"]
+[ext_resource type="StyleBox" uid="uid://b3o425awntv5o" path="res://Assets/Fonts&Styles/BoxSinFondo.tres" id="1_fx8xh"]
 [ext_resource type="Script" uid="uid://b1n7pxnh3bwk8" path="res://Script/info_popup.gd" id="2_6p7fm"]
 [ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="3_0r4hp"]
 [ext_resource type="FontFile" uid="uid://cg45djd3sgfio" path="res://Font/PixelifySans-Bold.ttf" id="4_e41gm"]
-[ext_resource type="StyleBox" uid="uid://cfgih13nykl1r" path="res://OnlyBorder.tres" id="5_4s04n"]
+[ext_resource type="StyleBox" uid="uid://cfgih13nykl1r" path="res://Assets/Fonts&Styles/OnlyBorder.tres" id="5_4s04n"]
 [ext_resource type="Texture2D" uid="uid://cpfgui1p7coq2" path="res://Assets/PNG/MiniWindow.tres" id="6_6p7fm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dgkkd"]

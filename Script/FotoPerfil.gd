@@ -10,7 +10,10 @@ const PROFILE_PIC_PATH = "user://profile_pic.png"
 @export var file_dialog: FileDialog 
 @export var namechange : Button
 @export var alias : LineEdit
+@export var edad: LineEdit 
+@export var puesto: LineEdit 
 @export var confirm : Button
+
 
 func _ready() -> void:
 	change_button.pressed.connect(_on_change_button_pressed)
@@ -39,15 +42,11 @@ func _display_image(image: Image) -> void:
 	var texture = ImageTexture.create_from_image(image)
 	profile_pic.texture = texture
 
-
-## 4. Guarda la imagen en la carpeta 'user://'
 func _save_profile_pic(image: Image) -> void:
 	var err = image.save_png(PROFILE_PIC_PATH)
 	if err != OK:
 		printerr("Error: No se pudo guardar la foto de perfil: ", err)
 
-
-## 5. Carga la imagen guardada (se llama en _ready)
 func load_profile_pic() -> void:
 	if not FileAccess.file_exists(PROFILE_PIC_PATH):
 		print("No se encontró foto de perfil guardada.")
@@ -60,11 +59,15 @@ func load_profile_pic() -> void:
 
 func _on_cambiar_nombre_pressed() -> void:
 	alias.editable = true
+	edad.editable = true
+	puesto.editable = true
 	confirm.show()
 
 
 func _on_confirm_change_pressed() -> void:
-	GameManager.set_player_name(alias.text)
+	GameManager.save_all_data(int(edad.text),puesto.text,alias.text)
 	alias.editable = false
+	edad.editable = false
+	puesto.editable = false
 	confirm.hide()
 	

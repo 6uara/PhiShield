@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_pl3gp")
-region = Rect2(1487, 1197, 18, 20)
+region = Rect2(1488, 1198, 16, 18)

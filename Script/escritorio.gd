@@ -30,7 +30,7 @@ signal showpoputexthelp
 
 # --- VARIABLES DEL JUEGO ---
 var email_actual: EmailData
-var speed = 18
+var speed : float = 18
 # -----------------------------------------------------------------
 # INICIO
 # -----------------------------------------------------------------
@@ -69,7 +69,10 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 	
 	if fue_correcto:
 		GameManager.record_attempt(true)
-		var feedback = "Correcto!! \n" + "Ese Mail era Phishing"
+		var tipo_email = "LEGÍTIMO"
+		if email_actual.es_phishing:
+			tipo_email = "PHISHING"
+		var feedback = "Correcto!! \n" + "Ese Mail era " % tipo_email
 		info_popup.show_info(feedback)
 	else:
 		GameManager.record_attempt(false)
@@ -89,7 +92,7 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 # -----------------------------------------------------------------
 # FUNCIONES DE LAS HERRAMIENTAS
 # -----------------------------------------------------------------
-func _on_link_inspeccionado(meta: Variant) -> void:
+func _on_link_inspeccionado(_meta: Variant) -> void:
 	GameManager.record_attempt(false)
 	var feedback = "ERROR: Clickeaste un Link Sospechoso. \n\n"
 	showpopupinfo.emit(feedback)

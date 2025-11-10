@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends HBoxContainer
 class_name trophyContainer
 
 @onready var bronce: TextureRect = $Bronce

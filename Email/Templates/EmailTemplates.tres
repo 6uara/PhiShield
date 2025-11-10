@@ -12,7 +12,6 @@ Hemos detectado actividad sospechosa en su cuenta. Por seguridad, debe verificar
 Haga clic aquí para verificar: [url={www.datamirror.com}]MyEnterpriseSecurity[/url]
 Tiene solo 24 horas para completar este proceso.
 Gracias, Equipo de Seguridad"
-enlaces = Array[Dictionary]([])
 adjuntos = Array[String](["company_security_info.pdf"])
 es_phishing = true
 pistas = Array[String](["Mail No Confiable"])
@@ -29,7 +28,6 @@ Para procesar este aumento, necesitamos verificar sus datos bancarios actualizad
 Debe completar este formulario antes de las 18:00 hrs o perderá esta oportunidad.
 Adjunte también copia de su cédula y últimas 3 liquidaciones.
 Saludos, Departamento RRHH"
-enlaces = Array[Dictionary]([])
 adjuntos = Array[String](["contrato.pdf.exe"])
 es_phishing = true
 pistas = Array[String](["Adjunto No Confiable", "Link Sospechoso"])
@@ -50,7 +48,6 @@ Copia de cédula y certificados
 Pago de $50.000 por trámites administrativos
 Respuesta antes de medianoche o perderá esta oportunidad única.
 Saludos, Reclutamiento Premium"
-enlaces = Array[Dictionary]([])
 adjuntos = Array[String](["perfilpuesto.pdf"])
 es_phishing = true
 pistas = Array[String](["Link Sospechoso", "Sender Sospechoso"])
@@ -68,32 +65,16 @@ Si no actualiza hoy: ❌ Perderá acceso a todos los sistemas ❌ No podrá recu
 Este proceso toma solo 2 minutos.
 ¡No espere más!
 Departamento de TI Soporte Técnico"
-enlaces = Array[Dictionary]([])
 adjuntos = Array[String](["company_security_guidelines.pdf"])
-es_phishing = false
 pistas = Array[String](["Link Sospechoso", "Archivo Sospechoso"])
 metadata/_custom_type_script = "uid://ybdvfgy72k5q"
 
 [sub_resource type="Resource" id="Resource_j5dfe"]
 script = ExtResource("1_efps2")
-remitente_visible = ""
-asunto = ""
-cuerpo = ""
-enlaces = Array[Dictionary]([])
-adjuntos = Array[String]([])
-es_phishing = false
-pistas = Array[String]([])
 metadata/_custom_type_script = "uid://ybdvfgy72k5q"
 
 [sub_resource type="Resource" id="Resource_rv4n1"]
 script = ExtResource("1_efps2")
-remitente_visible = ""
-asunto = ""
-cuerpo = ""
-enlaces = Array[Dictionary]([])
-adjuntos = Array[String]([])
-es_phishing = false
-pistas = Array[String]([])
 metadata/_custom_type_script = "uid://ybdvfgy72k5q"
 
 [resource]
