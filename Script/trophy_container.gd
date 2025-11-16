@@ -8,8 +8,8 @@ class_name trophyContainer
 
 func _ready() -> void:
 	if(not GameManager.is_module_completed(difficultyEnums.difficulty.Bronce)):
-		bronce.self_modulate -= Color(-50,-50,-50)
+		bronce.hide()
 	if(not GameManager.is_module_completed(difficultyEnums.difficulty.Plata)):
-		plata.self_modulate -= Color(-50,-50,-50)
+		plata.hide()
 	if(not GameManager.is_module_completed(difficultyEnums.difficulty.Oro)):
-		oro.self_modulate -= Color(-50,-50,-50)
+		oro.hide()
