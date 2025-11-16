@@ -48,13 +48,14 @@ metadata/_edit_lock_ = true
 [node name="PlayButton" type="Button" parent="PlayContainer"]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_n45e2")
-text = "Play"
+text = "Seleccionar Dificultad"
 
 [node name="SelectDificulty" type="OptionButton" parent="PlayContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("4_ce3w2")
 theme_override_styles/normal = ExtResource("3_n45e2")
+selected = 0
 item_count = 3
 popup/item_0/text = "Bronce"
 popup/item_0/icon = ExtResource("5_trj04")
@@ -85,12 +86,12 @@ metadata/_edit_lock_ = true
 [node name="OptionsButton" type="Button" parent="OptionsQuit"]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_n45e2")
-text = "Options"
+text = "Opciones"
 
 [node name="QuitButton" type="Button" parent="OptionsQuit"]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_n45e2")
-text = "Quit"
+text = "Salir"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 360.0
@@ -128,14 +129,6 @@ filters = PackedStringArray("*.png", "*.jpg , *.jpeg")
 layout_mode = 2
 theme = ExtResource("4_ce3w2")
 
-[node name="TextureRect" type="TextureRect" parent="FotoPerfil/DataContainer"]
-texture_filter = 1
-clip_contents = true
-layout_mode = 2
-texture = ExtResource("10_t1dhk")
-expand_mode = 5
-stretch_mode = 4
-
 [node name="CambiarFoto" type="Button" parent="FotoPerfil/DataContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -144,13 +137,21 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = ExtResource("3_n45e2")
 text = "Cambiar Foto"
 
+[node name="TextureRect" type="TextureRect" parent="FotoPerfil/DataContainer"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("10_t1dhk")
+expand_mode = 5
+stretch_mode = 4
+
 [node name="CambiarDatos" type="Button" parent="FotoPerfil/DataContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("4_ce3w2")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = ExtResource("3_n45e2")
-text = "Cambiar Alias"
+text = "Cambiar Datos"
 
 [node name="Alias" type="LineEdit" parent="FotoPerfil/DataContainer"]
 layout_mode = 2
@@ -175,6 +176,7 @@ alignment = 1
 editable = false
 
 [node name="ConfirmarCambios" type="Button" parent="FotoPerfil/DataContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("4_ce3w2")
