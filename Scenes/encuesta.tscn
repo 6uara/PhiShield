@@ -1,0 +1,378 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci1rptcm6yadj"]
+
+[ext_resource type="Theme" uid="uid://cqoasn3fnuyo3" path="res://Font/PixelArtFont.tres" id="1_dbmme"]
+[ext_resource type="Script" uid="uid://c8bheffqyiado" path="res://Scenes/encuesta_scrpt.gd" id="2_dx2nj"]
+[ext_resource type="Texture2D" uid="uid://2j5cq7ixu6v0" path="res://Assets/PNG/menuFondo.tres" id="3_dx2nj"]
+
+[node name="Encuesta" type="Control"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dbmme")
+script = ExtResource("2_dx2nj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.003
+anchor_right = 1.0
+anchor_bottom = 1.097
+offset_left = -0.544
+offset_bottom = 0.143982
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_dx2nj")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.059000004
+anchor_top = 0.07300001
+anchor_right = 0.94200003
+anchor_bottom = 0.901
+offset_left = 0.03199768
+offset_top = -0.30400467
+offset_right = -0.18408203
+offset_bottom = 0.15197754
+
+[node name="EncuestaUI" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Pregunta1" type="Label" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+text = "La interfaz del juego me resultó clara y fácil de entender."
+
+[node name="1" type="HSlider" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta2" type="Label" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+text = "Los elementos visuales (botones, íconos, colores) ayudaron a comprender las acciones disponibles."
+
+[node name="2" type="HSlider" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta3" type="Label" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+text = "El estilo visual tipo Pixel Art fue atractivo y coherente con la temática del juego."
+
+[node name="3" type="HSlider" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta4" type="Label" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+text = "Los mensajes visuales (alertas, resultados, indicadores) fueron claros y oportunos."
+
+[node name="4" type="HSlider" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta5" type="Label" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+text = "No tuve dificultades para identificar las opciones o navegar por el menú."
+
+[node name="5" type="HSlider" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Button" type="Button" parent="PanelContainer/EncuestaUI"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Siguiente"
+
+[node name="EncuestaUX" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Pregunta1" type="Label" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+text = "El flujo del juego fue intuitivo y comprendí fácilmente qué debía hacer."
+
+[node name="1" type="HSlider" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta2" type="Label" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+text = "La retroalimentación inmediata (aciertos/errores) me ayudó a entender mis decisiones."
+
+[node name="2" type="HSlider" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta3" type="Label" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+text = "Considero que el nivel de dificultad progresivo fue adecuado."
+
+[node name="3" type="HSlider" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta4" type="Label" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+text = "Me sentí motivado/a a continuar jugando para mejorar mis resultados."
+
+[node name="4" type="HSlider" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta5" type="Label" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+text = "El juego mantiene mi atención mejor que una capacitación tradicional."
+
+[node name="5" type="HSlider" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Button" type="Button" parent="PanelContainer/EncuestaUX"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Siguiente"
+
+[node name="EncuestaUsabilidad" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Pregunta1" type="Label" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+text = "El juego funcionó sin problemas técnicos ni interrupciones."
+
+[node name="1" type="HSlider" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta2" type="Label" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+text = "Las transiciones entre pantallas y niveles fueron fluidas."
+
+[node name="2" type="HSlider" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta3" type="Label" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+text = "El tiempo de respuesta del sistema fue adecuado."
+
+[node name="3" type="HSlider" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta4" type="Label" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+text = "Los tutoriales iniciales explicaron correctamente las mecánicas del juego."
+
+[node name="4" type="HSlider" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta5" type="Label" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+text = "Pude completar la capacitación sin necesitar asistencia externa."
+
+[node name="5" type="HSlider" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Button" type="Button" parent="PanelContainer/EncuestaUsabilidad"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Siguiente"
+
+[node name="EncuestaGeneral" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Pregunta1" type="Label" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+text = "Estoy satisfecho/a con la experiencia general del juego."
+
+[node name="1" type="HSlider" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta2" type="Label" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+text = "Considero que aprendí a identificar mejor intentos de phishing gracias al juego."
+
+[node name="2" type="HSlider" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta3" type="Label" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+text = "Recomendaría esta herramienta a otros empleados para su capacitación."
+
+[node name="3" type="HSlider" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta4" type="Label" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+text = "Me gustaría participar en futuras versiones o niveles del juego."
+
+[node name="4" type="HSlider" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Pregunta5" type="Label" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+text = "En general, PhiShield mejoró mi percepción sobre la importancia de la ciberseguridad."
+
+[node name="5" type="HSlider" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 1
+
+[node name="Button" type="Button" parent="PanelContainer/EncuestaGeneral"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Finalizar"
+
+[connection signal="pressed" from="PanelContainer/EncuestaUI/Button" to="." method="siguiente"]
+[connection signal="pressed" from="PanelContainer/EncuestaUX/Button" to="." method="siguiente"]
+[connection signal="pressed" from="PanelContainer/EncuestaUsabilidad/Button" to="." method="siguiente"]
+[connection signal="pressed" from="PanelContainer/EncuestaGeneral/Button" to="." method="siguiente"]

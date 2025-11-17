@@ -28,9 +28,13 @@ func _on_timer_timeout() -> void:
 
 func _on_select_dificulty_item_selected(index: int) -> void:
 	match index:
-		0: get_tree().change_scene_to_file("res://Scenes/Bronce.tscn")
-		1: get_tree().change_scene_to_file("res://Scenes/Plata.tscn")
-		2: get_tree().change_scene_to_file("res://Scenes/Oro.tscn")
+		0: get_tree().change_scene_to_file("res://Scenes/Modulos/Bronce.tscn")
+		1: get_tree().change_scene_to_file("res://Scenes/Modulos/Plata.tscn")
+		2: get_tree().change_scene_to_file("res://Scenes/Modulos/Oro.tscn")
 
 func _on_options_button_pressed() -> void:
 	options_menu.show()
+
+
+func _on_encuesta_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/encuesta.tscn")

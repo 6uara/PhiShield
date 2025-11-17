@@ -72,17 +72,17 @@ func _on_decision_tomada(decision_del_jugador: bool) -> void:
 		var tipo_email = "LEGÍTIMO"
 		if email_actual.es_phishing:
 			tipo_email = "PHISHING"
-		var feedback = "Correcto!! \n" + "Ese Mail era " % tipo_email
+		var feedback = "Correcto!! \n" + "Ese Mail era " + tipo_email
 		info_popup.show_info(feedback)
 	else:
 		GameManager.record_attempt(false)
 		var tipo_email = "LEGÍTIMO"
 		if email_actual.es_phishing:
 			tipo_email = "PHISHING"
-		var feedback = "ERROR: Este email era %s.\n\n" % tipo_email
+		var feedback = "ERROR: Este email era " + tipo_email 
 		# Añadir las pistas solo si era phishing y fallaste
 		if email_actual.es_phishing and not email_actual.pistas.is_empty():
-			feedback += "Pistas perdidas:\n"
+			feedback += "\nPistas perdidas:\n"
 			for pista in email_actual.pistas:
 				feedback += "- " + pista + "\n"
 		info_popup.show_info(feedback)

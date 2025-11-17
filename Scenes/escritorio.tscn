@@ -186,6 +186,7 @@ text = "Escanear Adjunto"
 
 [node name="Help" type="Button" parent="Tools/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_3j7i0")

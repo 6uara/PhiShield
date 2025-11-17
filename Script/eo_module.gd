@@ -4,12 +4,12 @@ extends PanelContainer
 @onready var siguiente: Button = $VBoxContainer/HBoxContainer/Siguiente
 @onready var reintentar: Button = $VBoxContainer/HBoxContainer/Reintentar
 
-var speed = 18 
+var speed = 18.0
 
 func _ready() -> void:
 	GameManager.trial_finished.connect(trialfinished)
 
-func trialfinished(paso : bool, dificultadsiguiente : Variant, dificultadactual : Variant):
+func trialfinished(paso : bool, dificultadactual : Variant):
 	print("Se llamo al eom")
 	self.show()
 	if(paso):
